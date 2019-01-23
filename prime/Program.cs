@@ -1,20 +1,21 @@
 ﻿using System;
-using System.Collections.Specialized;
+using System.Timers;  
 
 namespace prime
 {
   class Program
   {
+
     static void Main(string[] args)
     {
       int gotonum = 10000;
       int theloop = 0;
       bool bolok = true;
       int innerloop = 0;
-      StringCollection authorNames = new StringCollection();
-      
+      DateTime starttime = DateTime.Now;
+      DateTime endtime;
 
-      for (theloop = 1; theloop < gotonum; theloop++)
+      for (theloop = 1; theloop < gotonum;theloop++)
       {
         //assume every number qualifies, until you find a condition where it doesn't        
         bolok = true;
@@ -33,9 +34,12 @@ namespace prime
           Console.WriteLine(theloop);
            
       }
-      
-  
+      endtime = DateTime.Now;
+
+      Console.WriteLine("This took " + (endtime - starttime) + " seconds");
       Console.ReadLine();
     }
+
+
   }
 }
